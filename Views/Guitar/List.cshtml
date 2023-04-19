@@ -1,0 +1,21 @@
+﻿@model RockInStock.ViewModels.GuitarListViewModel
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>RockInStock</title>
+    </head>
+    <body>
+        <h1>@Model.CurrentCategory</h1>
+        @foreach(var guitar in Model.Guitars)
+        {
+            <div>
+                <h2>@guitar.Name</h2>
+                <h2>@guitar.Category</h2>
+                <h2>£@guitar.Price</h2>
+            </div>
+        }
+    </body>
+</html>
