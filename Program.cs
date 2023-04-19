@@ -1,4 +1,9 @@
+using RockInStock.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+builder.Services.AddScoped<IGuitarRepository, MockGuitarRepository>();
 
 builder.Services.AddControllersWithViews();    // bringing in framework services that enable MVC in this app
 
