@@ -21,5 +21,15 @@ namespace RockInStock.Controllers
                 _guitarRepository.AllGuitars, "Acoustic guitar");
             return View(guitarListViewModel);
         }
+
+        public IActionResult Details(int id)
+        {
+            var guitar = _guitarRepository.GetGuitarById(id);
+            if(guitar == null)
+            {
+                return NotFound();
+            }
+            return View(guitar);
+        }
     }
 }
