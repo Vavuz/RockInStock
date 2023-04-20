@@ -1,7 +1,10 @@
-﻿namespace RockInStock.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace RockInStock.Models
 {
     public class Guitar
     {
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;    // not nullable
         public string? ShortDescription { get; set; }    // nullable, so can be null
