@@ -18,7 +18,7 @@ namespace RockInStock.Controllers
         public IActionResult List()
         {
             GuitarListViewModel guitarListViewModel = new GuitarListViewModel(
-                _guitarRepository.AllGuitars, "Acoustic guitar");
+                _guitarRepository.AllGuitars, "All Guitars");
             return View(guitarListViewModel);
         }
 

@@ -14,11 +14,11 @@
         <div class="container">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary"
-                     aria-label="RockinStock navigation header">
+                     aria-label="RockInStock navigation header">
                     <div class="container-xl">
                         <a class="navbar-brand" asp-controller="Home" asp-action="Index">
                             <img src="Images/logo.png" width="151" height="47" class="d-inline-block align-top mb-2 mt-1"
-                                 alt="RockInStock">
+                                 alt="RockInStock Logo">
                         </a>
 
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -28,11 +28,18 @@
 
                         <div class="collapse navbar-collapse" id="navbarCollapse">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="Guitar" asp-action="List" class="nav-link">Guitars</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
             </header>
+
             @RenderBody()
         </div>
     </body>
