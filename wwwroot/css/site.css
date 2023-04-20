@@ -11824,11 +11824,11 @@ h6, .h6 {
     margin-bottom: -44px;
 }
 
-.pies-of-the-week {
+.guitars-of-the-month {
     margin-top: 52px;
 }
 
-.pie-button {
+.guitar-button {
     position: relative;
     left: 0%;
     right: 0%;
@@ -11836,19 +11836,19 @@ h6, .h6 {
     bottom: 0%;
 }
 
-.pie-card {
+.guitar-card {
     border: none;
 }
 
-.card-body.pie-button {
+.card-body.guitar-button {
     padding: 0px;
 }
 
-.pie-button > h4, .pie-button > .h4 {
+.guitar-button > h4, .guitar-button > .h4 {
     margin-bottom: 0px;
 }
 
-.pie-link {
+.guitar-link {
     text-decoration: none;
 }
 

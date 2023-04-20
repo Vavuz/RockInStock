@@ -2,11 +2,24 @@
 
 
 <h1>@Model.CurrentCategory</h1>
-@foreach(var guitar in Model.Guitars)
+@foreach (var guitar in Model.Guitars)
 {
-    <div>
-        <h2>@guitar.Name</h2>
-        <h2>@guitar.Category</h2>
-        <h2>£@guitar.Price</h2>
+    <div class="col">
+        <div class="card guitar-card">
+            <img src="@guitar.ImageThumbnailUrl" style="width: 200px; height: 200px" class="card-img-top" alt="@guitar.Name">
+            <div class="card-body guitar-button">
+                <h4 class="d-grid">
+                </h4>
+
+                <div class="d-flex justify-content-between mt-2">
+                    <h2 class="text-start">
+                        <a class="guitar-link">@guitar.Name</a>
+                    </h2>
+                    <h5 class="text-nowrap">
+                        @guitar.Price.ToString("c")
+                    </h5>
+                </div>
+            </div>
+        </div>
     </div>
 }
