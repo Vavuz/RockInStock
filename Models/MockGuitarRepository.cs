@@ -17,19 +17,19 @@
                     "body and neck of the guitar to give it a balanced sound / High quality thin gloss finish to add an extra " +
                     "touch of beauty\r\nItems delivered: 1x Yamaha C40II Full Size Classical Guitar with 6 Nylon Strings in " +
                     "Natural Wooden Colour / Guitar info literature", Category = _categoryRepository.AllCategories.ToList()[0],
-                    ImageUrl = "https://m.media-amazon.com/images/I/51N2zTP-LqL._AC_SY879_.jpg", InStock = true,
+                    ImageThumbnailUrl = "Images/Thumbnails/1.jpg", ImageUrl = "https://m.media-amazon.com/images/I/51N2zTP-LqL._AC_SY879_.jpg", InStock = true,
                     IsGuitarOfTheMonth = false},
                 new Guitar {Id = 2, Name = "Fender Clapton TR", Price = 2180.98M, ShortDescription = "Fender Clapton Strat Signature TR",
                     LongDescription = "Eric Clapton artist SIGNATURE model\r\nAlder body\r\nMaple neck soft V shape\r\nMaple" +
                     " fretboard with 22 vintage frets\r\n3x Vintage Noiseless pickup (neck, middle, bridge)",
                     Category = _categoryRepository.AllCategories.ToList()[1],
-                    ImageUrl = "https://thumbs.static-thomann.de/thumb//orig/pics/prod/179406.webp", InStock = true,
+                    ImageThumbnailUrl = "Images/Thumbnails/2.jpg", ImageUrl = "https://thumbs.static-thomann.de/thumb//orig/pics/prod/179406.webp", InStock = true,
                     IsGuitarOfTheMonth = true},
                 new Guitar {Id = 3, Name = "Schecter Orleans", Price = 577.97M,
                     ShortDescription = "Schecter Orleans Studio Acoustic SSTBLK",
                     LongDescription = "With cutaway\r\nTop: Solid cedar\r\nBack and sides: Mahogany\r\nNeck: Mahogany\r\nFretboard: Rosewood",
                     Category = _categoryRepository.AllCategories.ToList()[2],
-                    ImageUrl = "https://thumbs.static-thomann.de/thumb//orig/pics/prod/513493.webp", InStock = false,
+                    ImageThumbnailUrl = "Images/Thumbnails/3.jpg", ImageUrl = "https://thumbs.static-thomann.de/thumb//orig/pics/prod/513493.webp", InStock = false,
                     IsGuitarOfTheMonth = false}
             };
 
