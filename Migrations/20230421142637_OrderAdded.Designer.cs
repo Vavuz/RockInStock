@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RockInStock.Models;
 
@@ -11,9 +12,11 @@ using RockInStock.Models;
 namespace RockInStock.Migrations
 {
     [DbContext(typeof(RockInStockDbContext))]
-    partial class RockInStockDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230421142637_OrderAdded")]
+    partial class OrderAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
