@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RockInStock.Models;
 using RockInStock.ViewModels;
+using System.IO.Pipelines;
 
 namespace RockInStock.Controllers
 {
@@ -15,11 +16,24 @@ namespace RockInStock.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public IActionResult List()
+        public ViewResult List(string category)
         {
-            GuitarListViewModel guitarListViewModel = new GuitarListViewModel(
-                _guitarRepository.AllGuitars, "All Guitars");
-            return View(guitarListViewModel);
+            IEnumerable<Guitar> guitars;
+            string? currentCategory;
+
+            if (string.IsNullOrEmpty(category))
+            {
+                guitars = _guitarRepository.AllGuitars.OrderBy(g => g.Id);
+                currentCategory = "All guitars";
+            }
+            else
+            {
+                guitars = _guitarRepository.AllGuitars.Where(g => g.Category.Name == category)
+                    .OrderBy(g => g.Id);
+                currentCategory = _categoryRepository.AllCategories.FirstOrDefault(c => c.Name == category)?.Name;
+            }
+
+            return View(new GuitarListViewModel(guitars, currentCategory));
         }
 
         public IActionResult Details(int id)
