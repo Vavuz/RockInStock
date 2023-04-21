@@ -6,6 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IGuitarRepository, GuitarRepository>();
 
+builder.Services.AddScoped<IShoppingCart, ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+builder.Services.AddSession();
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddControllersWithViews();    // bringing in framework services that enable MVC in this app
 builder.Services.AddDbContext<RockInStockDbContext>(options =>
 {
@@ -15,6 +19,7 @@ builder.Services.AddDbContext<RockInStockDbContext>(options =>
 var app = builder.Build();
 
 app.UseStaticFiles();    // looking for requests for static files: html, css, etc.
+app.UseSession();
 
 if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();    // contains info that user shouldn't see but that can help us developers

@@ -8,5 +8,6 @@ namespace RockInStock.Models
         
         public DbSet<Category> Categories { get; set; }
         public DbSet<Guitar> Guitars { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
     }
 }

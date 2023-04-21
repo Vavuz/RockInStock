@@ -5,6 +5,10 @@
         <img src="@Model.ImageThumbnailUrl" class="card-img-top" alt="@Model.Name" style="width: 15rem;">
         <div class="card-body guitar-button">
             <h4 class="d-grid">
+                <a class="btn btn-secondary"
+                   asp-controller="ShoppingCart"
+                   asp-action="AddToShoppingCart"
+                   asp-route-guitarId="@Model.Id"> + Add to cart</a>
             </h4>
 
             <div class="d-flex justify-content-between mt-2">
