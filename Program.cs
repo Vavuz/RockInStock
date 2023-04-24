@@ -24,6 +24,8 @@ builder.Services.AddDbContext<RockInStockDbContext>(options =>
     options.UseSqlServer(builder.Configuration["ConnectionStrings:RockInStockDbContextConnection"]);
 });
 
+builder.Services.AddServerSideBlazor();
+
 var app = builder.Build();
 
 app.UseStaticFiles();    // looking for requests for static files: html, css, etc.
@@ -34,5 +36,9 @@ if (app.Environment.IsDevelopment())
 
 app.MapDefaultControllerRoute();    // needed to be able to navigate (route) to our pages (views), it is endpoint middleware
 app.MapRazorPages();
+
+app.MapBlazorHub();
+app.MapFallbackToPage("/app/{*catchall}", "/App/Index");
+
 DbInitialiser.Seed(app);
 app.Run();
