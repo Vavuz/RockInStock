@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockInStock", "RockInStock.csproj", "{B39D152A-1805-4DFB-8733-45D95A299B7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockInStockTests", "..\RockInStockTest\RockInStockTests.csproj", "{80597CC3-4A4F-4D8B-924E-4269BB428569}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B39D152A-1805-4DFB-8733-45D95A299B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B39D152A-1805-4DFB-8733-45D95A299B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B39D152A-1805-4DFB-8733-45D95A299B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80597CC3-4A4F-4D8B-924E-4269BB428569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80597CC3-4A4F-4D8B-924E-4269BB428569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80597CC3-4A4F-4D8B-924E-4269BB428569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80597CC3-4A4F-4D8B-924E-4269BB428569}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
