@@ -45,5 +45,10 @@ namespace RockInStock.Controllers
             }
             return View(guitar);
         }
+
+        public IActionResult Search()
+        {
+            return View();
+        }
     }
 }

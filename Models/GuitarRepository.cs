@@ -25,5 +25,10 @@ namespace RockInStock.Models
         {
             return _rockInStockDbContext.Guitars.FirstOrDefault(g => g.Id == guitarId);
         }
+
+        public IEnumerable<Guitar> SearchGuitars(string searchQuery)
+        {
+            return _rockInStockDbContext.Guitars.Where(g => g.Name.Contains(searchQuery));
+        }
     }
 }

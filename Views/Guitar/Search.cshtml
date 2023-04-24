@@ -1,0 +1,46 @@
+﻿
+<br />
+<br />
+<br />
+<br />
+  Enter your search query:
+<input id="txtGuitarName" type="text" />
+<button id="searchButton">Search</button>
+<br />
+<br />
+<table id="tblGuitars" cellpadding="0" cellspacing="0">
+    <tbody></tbody>
+</table>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("button").click(function () {
+            var searchQuery = $.trim($("#txtGuitarName").val());
+            $("table tbody").html("");
+            $.ajax({
+                type: "POST",
+                url: "/api/Search",
+                data: "\"" + searchQuery + "\"",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (guitars) {
+                    var table = $("#tblGuitars");
+                    table.find("tr:not(:first)").remove();
+                    $.each(guitars, function (i, guitar) {
+                        $("tbody").append($("<tr>"));
+                        appendElement = $("tbody tr").last();
+                        appendElement.append($("<td>").html('<img src=' + guitar.imageThumbnailUrl + ' width=250 class="rounded m-2">'));
+                        appendElement.append($("<td>").html('<h2><a href="/guitar/details/' + guitar.id + '" class="guitar-link">' + guitar.name + '</a></h2><br>'));
+                        appendElement.append($("<td>").html(guitar.price));
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr)
+                }
+            });
+        });
+    });
+
+</script>

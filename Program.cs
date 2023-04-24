@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using RockInStock.Models;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,12 @@ builder.Services.AddScoped<IShoppingCart, ShoppingCart>(sp => ShoppingCart.GetCa
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
-builder.Services.AddControllersWithViews();    // bringing in framework services that enable MVC in this app
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    }); ;    // bringing in framework services that enable MVC in this app
+
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<RockInStockDbContext>(options =>
 {

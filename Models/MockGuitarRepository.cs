@@ -42,5 +42,10 @@
         }
 
         public Guitar? GetGuitarById(int guitarId) => AllGuitars.FirstOrDefault(g => g.Id == guitarId);
+
+        public IEnumerable<Guitar> SearchGuitars(string searchQuery)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
