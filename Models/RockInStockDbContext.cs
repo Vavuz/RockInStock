@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace RockInStock.Models
 {
-    public class RockInStockDbContext: DbContext
+    public class RockInStockDbContext: IdentityDbContext
     {
         public RockInStockDbContext(DbContextOptions<RockInStockDbContext> options) : base(options) { }
         
